@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, IndexRoute } from 'react-router'
 import App from 'layouts/app';
 //import EditTab from 'views/EditTab';
-import CollectionsTab from 'views/CollectionsTab';
+import CollectionTab from 'views/CollectionTab';
 //import PublishTab from 'views/PublishTab';
 
 // NOTE: here we're making use of the `resolve.root` configuration
@@ -14,9 +14,9 @@ import CollectionsTab from 'views/CollectionsTab';
 
 export default (
   <Route path='/' component={App}>
-    <IndexRoute component={CollectionsTab}/>
+    <IndexRoute component={CollectionTab}/>
 
-    <Route path="/collections" component={CollectionsTab} />
+    <Route path="/collections" component={CollectionTab} />
 
   </Route>
 );

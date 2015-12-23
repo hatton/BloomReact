@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import BookGrid from 'components/BookGrid';
-import './collectionsTab.less';
+import './collectionTab.less';
 
-export default class CollectionsTab extends Component {
+export default class CollectionTab extends Component {
 
   render () {
     return (
