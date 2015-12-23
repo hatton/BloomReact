@@ -6,6 +6,14 @@ const app = express()
 const debug = require('debug')('app:server')
 const paths = config.utils_paths
 
+app.get('/api/booksInCollection', function (req, res) {
+  res.send( JSON.stringify([{title:'Moby Dick', id:'1'}, {title:"Sons of Athena", id:'2'}, {title:"Cryptonomicon", id:'3'}, {title: "Superluminal", id:'4'}]));
+});
+
+app.get('/api/sourceBooks', function (req, res) {
+  res.send( JSON.stringify([{title:'Basic Book', id:'1'}, {title:"Decodable Reader", id:'2'}]));
+});
+
 app.use(historyApiFallback({
   verbose: false
 }))
