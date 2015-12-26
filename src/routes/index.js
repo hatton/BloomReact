@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, IndexRoute } from 'react-router'
 import App from 'layouts/app';
-//import EditTab from 'views/EditTab';
+import EditTab from 'views/EditTab';
 import CollectionTab from 'views/CollectionTab';
 //import PublishTab from 'views/PublishTab';
 
@@ -17,6 +17,7 @@ export default (
     <IndexRoute component={CollectionTab}/>
 
     <Route path="/collections" component={CollectionTab} />
+    <Route path="/edit" component={EditTab} />
 
   </Route>
 );
