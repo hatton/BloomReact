@@ -1,0 +1,57 @@
+.app{
+  noop:0;
+
+}
+// I haven't yet worked out how to make the CSSModules
+// system work with elements that are lower in the hierarchy
+// than our components. So for now this is just all global.
+:global {
+  .nav-tabs{
+    padding-top: 1px; //show a little color above tabs
+    background-color:#1D94A4;
+    border-bottom: none;
+
+    li{
+      text-align: center;
+
+      h1{
+        font-size: 9pt;
+        margin-top: 10px;
+        margin-bottom: 0;
+      }
+      img{
+        width:30px;
+        height: 30px;
+        border: none;
+        background-color: transparent;
+      }
+
+      /*.tab-content{
+      background-color:#303136;
+      color:#fff;
+      padding:5px
+      }*/
+      a{
+        //border-bottom: solid #404040;
+        //border: medium none;
+        color:white !important;
+        background-color: #575757;
+        height:70px;
+      }
+      /*.nav-tabs > li > a:hover{
+      background-color: #575757 !important;
+      border: medium none;
+      border-radius: 0;
+      color:#fff;
+      }*/
+
+      &.active > a,
+      &.active > a:focus,
+      &.active > a:hover{
+          background-color: #404040 !important;
+          border-style: none;
+          //border-color: black;
+      }
+    }
+  }
+}

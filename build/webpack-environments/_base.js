@@ -65,7 +65,8 @@ const webpackConfig = {
         loader: 'babel',
         query: {
           cacheDirectory: true,
-          plugins: ['transform-runtime', 'add-module-exports'],
+            //hatton added "transform-decorators-legacy"
+          plugins: ['transform-runtime', 'add-module-exports','transform-decorators-legacy'],
           presets: ['es2015', 'react', 'stage-0'],
           env: {
             development: {
@@ -105,7 +106,15 @@ const webpackConfig = {
       },
       {
        test: /\.less$/,
-       loader: "style!css!less"
+       //loader: "style!css!less"
+       loaders: [
+         'style',
+         CSS_LOADER,// note: the use of CSS_LOADER here, instead of 'css', means everything is  module and so your jsx can't just use raw style names
+         'postcss',
+         'less'
+       ]
+      // instead of the above loaders, this would give a separate css, but, I think, at the cost of hot module replacement:
+      //  loader: ExtractTextPlugin.extract("style-loader", "css-loader!postcss-loader!less-loader")
      },
       /* eslint-disable */
       { test: /\.woff(\?.*)?$/,  loader: 'url?prefix=fonts/&name=[path][name].[ext]&limit=10000&mimetype=application/font-woff' },

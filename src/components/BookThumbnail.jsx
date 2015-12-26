@@ -1,18 +1,14 @@
 import React, { Component } from 'react';
-import './BookThumbnail.less';
-import classNames from 'classnames';//https://github.com/JedWatson/classnames
-
+import styles from './BookThumbnail.less';
 
 export default class BookThumbnail extends Component {
 
   static propTypes = {
     onClick: React.PropTypes.func.isRequired
   }
+
   render () {
-    var thumbnailClasses = classNames(
-      'bookThumbnail',
-      {'selected' : this.props.selected}
-    );
+    var thumbnailClasses = styles.bookThumbnail + ' '+ ( this.props.selected? styles.selected:'');
 
     return (
               <li className={thumbnailClasses} onClick={this.props.onClick}>

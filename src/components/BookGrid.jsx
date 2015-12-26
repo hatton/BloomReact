@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {actions as bookActions} from 'redux/modules/currentBook';
-
+import CSSModules from 'react-css-modules';
 import BookThumbnail from 'components/BookThumbnail.jsx';
 import Axios from 'axios';
-import './BookGrid.less';
+import styles from './BookGrid.less';
 
+@CSSModules(styles)
 export default class BookGrid extends Component {
 
   static propTypes = {
@@ -37,7 +38,7 @@ export default class BookGrid extends Component {
       //todo: use a unique key instead of the caption
       return <BookThumbnail key={item.id} selected={thisIsTheThumbNailOfTheCurrentBook} onClick={() => selectBook(item.id)}>{item}</BookThumbnail>;
     };
-    return     <ul className='bookGrid'>{this.state.items.map(createItem)}</ul>;
+    return     <ul styleName='bookGrid'>{this.state.items.map(createItem)}</ul>;
   }
 }
 

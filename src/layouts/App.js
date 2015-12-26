@@ -4,13 +4,11 @@ import { Nav } from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
 import {NavItem } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-import 'layouts/app.css';
+import styles from './app.less';
 import CollectionTabSVG from 'assets/CollectionTab.svg';
 import EditTabSVG from 'assets/EditTab.svg';
 import PublishTabSVG from 'assets/PublishTab.svg';
 
-
-//import 'node_modules/bootstrap/dist/css/bootstrap.css';
 
 export default class App extends Component {
   static propTypes = {
@@ -19,8 +17,8 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
-        <Nav bsStyle="tabs" activeKey={1} onSelect={this.handleSelect}>
+      <div className={styles.app}>
+        <Nav className={styles.nav} bsStyle="tabs" activeKey={1} onSelect={this.handleSelect}>
           <LinkContainer to="collections">
             <NavItem><img src={CollectionTabSVG}/><h1>Collections</h1></NavItem>
           </LinkContainer>
